@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <span>{{ title }}</span>
+  <button mat-button (click)="sidenav.toggle()">Menu</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Inicio</a>
+      <a mat-list-item routerLink="/Form">Personas</a>
+      <a mat-list-item routerLink="/Form">Mascotas</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <h1>Contenido Principal</h1>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- La idea seria recorrer la lista de forms obtenida del back, y agregar un elemento
+al Nav Bar por cada una de esas.
+
+Al dar click se va al componente Form y según el formulario en el que haya dado click se
+cargaran la lista de inputs del back 
+
+Los inputs tienen nombre y tipo, por lo que se recorreria estos y se generaria un nuevo elemento
+a ser llenado por el usuario
+
+De esta manera se mantendría dinamico, y si se quiere modificar de cualquier manera los inputs o los forms
+solo habria que cambiar la base-->
